@@ -1,0 +1,46 @@
+<div class="container" ng-controller="ViewerController" ng-init="name = '<%- name %>'; voteid = <%- voteid %>; endtime = <%- endtime %>">
+	<div class="row">
+		<h4>
+			<div ng-if="count >= 0" class="col s12 m8 l6 center-on-small-only">Vote en cours: <strong>{{name}}</strong></div>
+
+			<div ng-if="count < 0" class="col s12 m8 l6 center-on-small-only">Résultats pour: <strong>{{name}}</strong></div>
+			<div ng-if="count >= 0" class="col s12 m4 l6 center-on-small-only right-on-large up-on-small-only">Live&nbsp;&nbsp;<img src="/images/three-dots.svg" width="50"></div>
+		</h4>
+	</div>
+	<div class="row">
+		<div class="col s6">
+			<div style="height: 160px" class="card green">
+				<div class="card-content">
+					<h1 class="center-align">
+						<span>{{votetrue}}</span>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<div class="col s6">
+			<div style="height: 160px" class="card red">
+				<div class="card-content">
+					<h1 class="center-align">
+						<span>{{votefalse}}</span>
+
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="center-align animated bounce" ng-if="count >= 1 && count < 3600">
+		<h5>Il reste <strong>{{count*1000 | date:"mm:ss"}} minutes</strong> avant la fin du vote!</h5>
+	</div>
+	<div class="center-align animated bounce" ng-if="count < 0">
+		<h5>Vote terminé le {{endtime*1000 | date:"d/MM/yyyy 'à' HH:mm'h'"}}</h5>
+	</div>
+	
+	</br>
+	<div class="center-align"> 
+		<canvas id="chart"></canvas>
+	</div>
+	
+</div>
+
+
+</script>

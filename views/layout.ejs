@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+        <link href="/styles/icons.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="/styles/animate.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="/styles/styles.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="/styles/angularjs-datetime-picker.css"  media="screen,projection"/>
+	<title>Votebox</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body ng-app="VoteBox" class="black white-text animated fadeIn">
+        <!-- HAUT DE PAGE -->
+        <nav>
+            <div class="nav-wrapper blue">
+		<img class="brand-logo center" src="/images/VBlogo.png" alt="Logo VoteBox"/>
+		<!--<span class="brand-logo center">VoteBox</span> -->
+
+        <p> <a href="/admin">
+            Administration Panel
+        </a> </p>
+
+
+		</div>
+        </nav>
+
+        <!-- CONTENU -->
+        </br>
+        <%- body %>
+
+        <script src="/js/dependencies/angular.min.js"></script>
+        <script src="/js/dependencies/angular-animate.min.js"></script>
+        <script src="/js/dependencies/sails.io.js"></script>
+        <script src="/js/dependencies/app.js"></script>
+        <script src="/js/dependencies/jquery.js"></script>
+        <script src="/js/dependencies/materialize.min.js"></script>
+        <script src="/js/dependencies/Chart.min.js"></script>
+        <script src="/js/dependencies/angularjs-datetime-picker.min.js"></script>
+        <script src="/js/dependencies/date.js"></script>
+    </body>
+  </html>

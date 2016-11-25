@@ -1,0 +1,40 @@
+<div class="container center" ng-controller="AdminPanelController">
+	<h5>Panel d'Administration</h5>
+
+	<div class="row">
+
+	<div class="col s6">
+		<div class="card-panel white blue-text">
+			<form>
+				<h5>Ajouter un vote</h5>
+				<div class="input-field">
+					<input id="addvote" type="text" ng-model="addvote.name" class="validate">
+			      	<label class="active" for="addvote">Nom du vote</label>
+				</div>
+				<div class="input-field">
+					<input ng-model="addvote.date" datetime-picker date-format="MM/dd/yyyy HH:mm" hour="23" minute='59' size="30" />
+					<label class="active" for="addvote">Date fin du vote</label>
+				</div>
+
+				<div ng-if="errors.addvote.length > 0" class="left-align alert-danger alert">
+		      		<ul>
+		      			<li style="margin-left: 10px;" ng-repeat="error in errors.addvote">{{error}}</li>
+		      		</ul>
+		      	</div>
+
+				<button class="btn red" ng-click="AddVote()">Go</button>
+			</form>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="card-panel white blue-text">
+			<h5>Supprimer un vote</h5>
+			
+			<ul class="collection">
+				<li ng-repeat="list in listvote" class="collection-item"><div><a href="#!" ng-href="/vote/{{list.id}}"> {{list.name}} (ID: {{list.id}})</a><a href="#!" ng-click="DeleteVote(list.id);" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+			</ul>
+		</div>
+	</div>
+
+	</div>
+</div>

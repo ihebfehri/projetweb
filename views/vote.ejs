@@ -1,0 +1,21 @@
+<div class="container center" ng-controller="VoteController" ng-init="name = '<%- name %>'; voteid = <%- voteid %>">
+	<h4><u>Votez pour:</u> {{name}}</h4></br>
+
+	<div class="row">
+		<div class="col s6">
+			<a class="waves-effect green waves-light btn" ng-click="SendVote(1);"><i class="material-icons left">done</i>Oui</a>
+		</div>
+		<div class="col s6">
+			<a class="waves-effect red waves-light btn" ng-click="SendVote(-1);"><i class="material-icons left">delete</i>Non</a>
+		</div>
+    </div>
+
+	<div id="modalvote" class="modal">
+		<div class="modal-content">
+			<h5 class="black-text">Merci d'avoir voté!</h5>
+		</div>
+		<div class="modal-footer">
+			<a href="/viewer/{{voteid}}" class=" modal-action modal-close waves-effect blue btn-flat">Viewer</a>
+		</div>
+  </div>
+</div>
